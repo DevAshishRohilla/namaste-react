@@ -40,17 +40,18 @@ header {
 }
 
 .searchBanner button {
-    position: relative;
     z-index: 9;
-    border: none;
-    padding: 10px;
-    height: 48px;
-    width: 100px;
-    border-radius: 0 40px 40px 0;
-    background: #f97f00;
     color: #fff;
+    background: #f97f00;
+    border: none;
+    border-radius: 40px;
+    width: 140px;
+    height: 48px;
+    padding: 10px;
     font-size: 16px;
+    position: relative;
 }
+
 .searchBanner .container {
     display: flex;
     justify-content: center;
@@ -69,13 +70,17 @@ header {
 
 .searchBanner input {
     z-index: 9;
-    position: relative;
-    padding: 12px 18px;
-    width: 80%;
-    max-width: 360px;
-    border-radius: 40px 0 0 40px;
     border: none;
+    border-radius: 40px 0 0 40px;
+    max-width: 360px;
     height: 48px;
+    padding: 12px 18px;
+    position: relative;
+    flex: auto;
+}
+
+.searchBanner input:focus {
+    outline: none;
 }
 
 .resList .container {
@@ -90,7 +95,14 @@ header {
     box-sizing: border-box;
 }
 
-.cardWrap {display: flex;flex-direction: column;transition: all ease 0.15s;}
+.cardWrap {
+    flex-direction: column;
+    transition: all .15s;
+    display: flex;
+    position: relative;
+    top: 0;
+    cursor: pointer;
+}
 
 .cardWrap img {
     width: 100%;
@@ -110,21 +122,37 @@ h3.resName {
 .ratings {
     display: flex;
     gap: 12px;
+    font-weight: 600;
 }
 
 .ratings * {
     font-size: 14px;
 }
 
-.cusines {
+.cuisine {
     font-size: 13px;
 }
 
-.cusines span:not(:first-child) {
-    margin-left: 5px;
+.col-3.Card:hover .cardWrap {
+    transition: all .15s;
+    top: -15px;
 }
 
-.col-3.Card:hover .cardWrap {
-    transform: scale(0.96);
-    transition: all ease 0.15s;
+.resAdd p {
+    margin: 15px 0 0;
+    font-size: 13px;
+    color: #767676;
+    letter-spacing: 0.25px;
 }
+
+.searchWrap {
+    display: flex;
+    max-width: 500px;
+    width: 90%;
+    background: #fff;
+    position: relative;
+    z-index: 9;
+    border-radius: 40px;
+    outline: 7px solid #ffffff61;
+}
+
